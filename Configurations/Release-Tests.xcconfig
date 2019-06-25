@@ -1,0 +1,7 @@
+#include "../Carthage/Checkouts/xcconfigs/iOS/iOS-Application.xcconfig"
+#include "../Carthage/Checkouts/xcconfigs/Base/Configurations/Release.xcconfig"
+#include "../Carthage/Checkouts/xcconfigs/Base/Configurations/Test.xcconfig"
+#include "Common.xcconfig"
+#include "Common-Test.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = $(_PRODUCT_BUNDLE_IDENTIFIER)

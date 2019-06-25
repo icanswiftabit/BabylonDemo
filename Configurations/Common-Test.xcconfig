@@ -1,0 +1,4 @@
+TEST_TARGET_NAME = BabylonDemo
+TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BabylonDemo.app/BabylonDemo"
+INFOPLIST_FILE = BabylonDemoTests/Info.plist
+BUNDLE_LOADER = $(TEST_HOST)
