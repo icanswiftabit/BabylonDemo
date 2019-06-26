@@ -22,9 +22,7 @@ final class AppFlowControllerSnapshotTests: XCTestCase {
         let rootViewController = sut.configuredMainViewController()
 
         // Act & Arrange
-        assertSnapshot(matching: rootViewController, as: .image(on: .iPhoneSe))
-        assertSnapshot(matching: rootViewController, as: .image(on: .iPhone8))
-        assertSnapshot(matching: rootViewController, as: .image(on: .iPhoneX))
+        snapshot(matching: rootViewController)
     }
 
 }

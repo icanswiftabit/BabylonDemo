@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5009EB722C3EDE100D0ECE3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */; };
 		F58222AD22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58222AC22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift */; };
 		F58222AE22C2A7DD002DC8A3 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; };
 		F58222B022C2A7E6002DC8A3 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		F582228C22C29DCF002DC8A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F582229322C2A424002DC8A3 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		F582229C22C2A4D8002DC8A3 /* BabylonDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5009EB522C3EDA500D0ECE3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F582229222C2A410002DC8A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 		F5944F8422C29BA800DD1174 /* BabylonDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				F5009EB522C3EDA500D0ECE3 /* Helpers */,
 				F58222AB22C2A675002DC8A3 /* SnapshotTests */,
 				F5944F8722C29BA800DD1174 /* Info.plist */,
 			);
@@ -381,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58222AD22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift in Sources */,
+				F5009EB722C3EDE100D0ECE3 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
