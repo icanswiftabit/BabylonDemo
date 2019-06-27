@@ -4,14 +4,10 @@ final class AppFlowController: FlowController {
     typealias RootViewController = UINavigationController
     let rootViewController = UINavigationController()
 
-    private let firstViewController: UIViewController = {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .green
-        return viewController
-    }()
+    private let postViewController = PostsViewController()
 
     func configuredMainViewController() -> UINavigationController {
-        rootViewController.viewControllers = [firstViewController]
+        rootViewController.viewControllers = [postViewController]
         return rootViewController
     }
 
