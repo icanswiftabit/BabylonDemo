@@ -4,9 +4,14 @@ final class AppFlowController: FlowController {
     typealias RootViewController = UINavigationController
     let rootViewController = UINavigationController()
 
-    private let postViewController = PostsViewController()
+    private(set) lazy var postViewController: PostsViewController = {
+        let networkController = PostsNetworkController()
+        let viewModel = PostsViewModel(networkController: networkController)
+        return PostsViewController(viewModel: viewModel)
+    }()
 
     func configuredMainViewController() -> UINavigationController {
+        rootViewController.navigationBar.prefersLargeTitles = true
         rootViewController.viewControllers = [postViewController]
         return rootViewController
     }
@@ -15,5 +20,4 @@ final class AppFlowController: FlowController {
         window.rootViewController = configuredMainViewController()
         window.makeKeyAndVisible()
     }
-    
 }

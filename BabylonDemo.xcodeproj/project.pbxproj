@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F5009EB722C3EDE100D0ECE3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */; };
-		F58222AD22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58222AC22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift */; };
+		F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */; };
 		F58222AE22C2A7DD002DC8A3 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; };
 		F58222B022C2A7E6002DC8A3 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5944FA022C29C1F00DD1174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5944F9122C29C1F00DD1174 /* Assets.xcassets */; };
@@ -17,17 +16,30 @@
 		F5944FA422C29C1F00DD1174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5944F9A22C29C1F00DD1174 /* AppDelegate.swift */; };
 		F5944FA522C29C1F00DD1174 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5944F9E22C29C1F00DD1174 /* FlowController.swift */; };
 		F5944FA822C29C7F00DD1174 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5944FA722C29C7F00DD1174 /* AppFlowController.swift */; };
-		F5E04E7322C3FCA90076430E /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6422C3FAB40076430E /* RxBlocking.framework */; };
+		F595E3A622C5637600684B29 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595E3A522C5637600684B29 /* PostsViewModel.swift */; };
+		F595E3A822C563DE00684B29 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F595E3A722C563DE00684B29 /* Post.swift */; };
+		F5DFBA3022C6A8780086DE4D /* NetworkControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */; };
+		F5DFBA3222C6A8A40086DE4D /* PostTaskKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3122C6A8A40086DE4D /* PostTaskKitProtocol.swift */; };
+		F5DFBA3422C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */; };
+		F5DFBA3722C6A90A0086DE4D /* PostTaskKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3622C6A90A0086DE4D /* PostTaskKit.swift */; };
+		F5DFBA4922C6B46E0086DE4D /* UIViewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA4822C6B46E0086DE4D /* UIViewsExtensions.swift */; };
+		F5DFBA4E22C6C9380086DE4D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA4D22C6C9380086DE4D /* PostCell.swift */; };
+		F5DFBA5022C6C94E0086DE4D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */; };
+		F5DFBA5322C6DC8B0086DE4D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA5222C6DC8B0086DE4D /* Logger.swift */; };
+		F5DFBA5522C7726D0086DE4D /* PostCellSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA5422C7726D0086DE4D /* PostCellSnapshotTests.swift */; };
+		F5DFBA7322C791D20086DE4D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA7222C791D20086DE4D /* UIViewController.swift */; };
+		F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */; };
+		F5DFBA7922C7988C0086DE4D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6422C3FAB40076430E /* RxBlocking.framework */; };
+		F5DFBA7A22C7988C0086DE4D /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6322C3FAB40076430E /* RxTest.framework */; };
 		F5E04E7422C3FCA90076430E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6722C3FAB40076430E /* RxCocoa.framework */; };
 		F5E04E7522C3FCA90076430E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6522C3FAB40076430E /* RxRelay.framework */; };
 		F5E04E7622C3FCA90076430E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6822C3FAB40076430E /* RxSwift.framework */; };
-		F5E04E7922C3FE640076430E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E04E7822C3FE640076430E /* APIClient.swift */; };
+		F5E04E7922C3FE640076430E /* PostsNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E04E7822C3FE640076430E /* PostsNetworkController.swift */; };
 		F5E04E7B22C414310076430E /* Worlds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E04E7A22C414310076430E /* Worlds.swift */; };
 		F5E04E9C22C41D430076430E /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E04E9A22C41D430076430E /* World.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5E04E9F22C41D430076430E /* World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E9822C41D430076430E /* World.framework */; };
 		F5E04EA022C41D430076430E /* World.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E9822C41D430076430E /* World.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F5E04EA622C41D510076430E /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E04EA522C41D510076430E /* World.swift */; };
-		F5E04EA822C422850076430E /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E04EA722C422840076430E /* PostsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +91,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		F582228C22C29DCF002DC8A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F582229322C2A424002DC8A3 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		F582229C22C2A4D8002DC8A3 /* BabylonDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58222A022C2A4D9002DC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F58222AC22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowControllerSnapshotTests.swift; sourceTree = "<group>"; };
+		F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		F58222B222C2AC65002DC8A3 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		F58222B322C2AC65002DC8A3 /* Develop.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 		F58222B622C2ACC1002DC8A3 /* Release-Tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Release-Tests.xcconfig"; sourceTree = "<group>"; };
@@ -98,18 +109,30 @@
 		F5944F9A22C29C1F00DD1174 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5944F9E22C29C1F00DD1174 /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		F5944FA722C29C7F00DD1174 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		F595E3A522C5637600684B29 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		F595E3A722C563DE00684B29 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerProtocol.swift; sourceTree = "<group>"; };
+		F5DFBA3122C6A8A40086DE4D /* PostTaskKitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTaskKitProtocol.swift; sourceTree = "<group>"; };
+		F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkCotrollerProtocol.swift; sourceTree = "<group>"; };
+		F5DFBA3622C6A90A0086DE4D /* PostTaskKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTaskKit.swift; sourceTree = "<group>"; };
+		F5DFBA4822C6B46E0086DE4D /* UIViewsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewsExtensions.swift; sourceTree = "<group>"; };
+		F5DFBA4D22C6C9380086DE4D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		F5DFBA5222C6DC8B0086DE4D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F5DFBA5422C7726D0086DE4D /* PostCellSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellSnapshotTests.swift; sourceTree = "<group>"; };
+		F5DFBA7222C791D20086DE4D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
 		F5E04E6322C3FAB40076430E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		F5E04E6422C3FAB40076430E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		F5E04E6522C3FAB40076430E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		F5E04E6722C3FAB40076430E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F5E04E6822C3FAB40076430E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		F5E04E7822C3FE640076430E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F5E04E7822C3FE640076430E /* PostsNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkController.swift; sourceTree = "<group>"; };
 		F5E04E7A22C414310076430E /* Worlds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worlds.swift; sourceTree = "<group>"; };
 		F5E04E9822C41D430076430E /* World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E04E9A22C41D430076430E /* World.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		F5E04E9B22C41D430076430E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5E04EA522C41D510076430E /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		F5E04EA722C422840076430E /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E04E7322C3FCA90076430E /* RxBlocking.framework in Frameworks */,
 				F5E04E9F22C41D430076430E /* World.framework in Frameworks */,
 				F5E04E7422C3FCA90076430E /* RxCocoa.framework in Frameworks */,
 				F5E04E7522C3FCA90076430E /* RxRelay.framework in Frameworks */,
@@ -137,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58222AE22C2A7DD002DC8A3 /* SnapshotTesting.framework in Frameworks */,
+				F5DFBA7922C7988C0086DE4D /* RxBlocking.framework in Frameworks */,
+				F5DFBA7A22C7988C0086DE4D /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +177,7 @@
 		F5009EB522C3EDA500D0ECE3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F5009EB622C3EDE100D0ECE3 /* SnapshotHelper.swift */,
+				F5DFBA7222C791D20086DE4D /* UIViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -182,7 +206,8 @@
 		F58222AB22C2A675002DC8A3 /* SnapshotTests */ = {
 			isa = PBXGroup;
 			children = (
-				F58222AC22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift */,
+				F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */,
+				F5DFBA5422C7726D0086DE4D /* PostCellSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -237,6 +262,7 @@
 				F5009EB522C3EDA500D0ECE3 /* Helpers */,
 				F58222AB22C2A675002DC8A3 /* SnapshotTests */,
 				F5944F8722C29BA800DD1174 /* Info.plist */,
+				F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */,
 			);
 			path = BabylonDemoTests;
 			sourceTree = "<group>";
@@ -256,8 +282,12 @@
 			children = (
 				F5944F9A22C29C1F00DD1174 /* AppDelegate.swift */,
 				F5E04E7A22C414310076430E /* Worlds.swift */,
+				F5DFBA5122C6DC840086DE4D /* Helpers */,
+				F5DFBA4722C6B4610086DE4D /* Extensions */,
 				F5944F9C22C29C1F00DD1174 /* FlowControllers */,
+				F5DFBA4A22C6C6320086DE4D /* FlowLayouts */,
 				F5944F9722C29C1F00DD1174 /* Models */,
+				F5DFBA3522C6A8FD0086DE4D /* Networking */,
 				F5944F9D22C29C1F00DD1174 /* Protocols */,
 				F5944F9822C29C1F00DD1174 /* ViewControllers */,
 				F595E3A222C560DC00684B29 /* ViewModels */,
@@ -269,6 +299,7 @@
 		F5944F9722C29C1F00DD1174 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F595E3A722C563DE00684B29 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,7 +315,7 @@
 		F5944F9B22C29C1F00DD1174 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F5E04EA722C422840076430E /* PostsView.swift */,
+				F5DFBA4D22C6C9380086DE4D /* PostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,7 +332,10 @@
 			isa = PBXGroup;
 			children = (
 				F5944F9E22C29C1F00DD1174 /* FlowController.swift */,
-				F5E04E7822C3FE640076430E /* APIClient.swift */,
+				F5DFBA3122C6A8A40086DE4D /* PostTaskKitProtocol.swift */,
+				F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */,
+				F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */,
+				F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -309,8 +343,42 @@
 		F595E3A222C560DC00684B29 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F595E3A522C5637600684B29 /* PostsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F5DFBA3522C6A8FD0086DE4D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFBA3622C6A90A0086DE4D /* PostTaskKit.swift */,
+				F5E04E7822C3FE640076430E /* PostsNetworkController.swift */,
+			);
+			name = Networking;
+			path = BabylonDemo/Source/Networking;
+			sourceTree = SOURCE_ROOT;
+		};
+		F5DFBA4722C6B4610086DE4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFBA4822C6B46E0086DE4D /* UIViewsExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5DFBA4A22C6C6320086DE4D /* FlowLayouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlowLayouts;
+			sourceTree = "<group>";
+		};
+		F5DFBA5122C6DC840086DE4D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFBA5222C6DC8B0086DE4D /* Logger.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F5E04E9922C41D430076430E /* World */ = {
@@ -383,6 +451,7 @@
 				F5944F7E22C29BA800DD1174 /* Frameworks */,
 				F5944F7F22C29BA800DD1174 /* Resources */,
 				F58222AF22C2A7E0002DC8A3 /* CopyFiles */,
+				F5DFBA7822C796840086DE4D /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -494,6 +563,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F5DFBA7822C796840086DE4D /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		F5E04E6222C3FA730076430E /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,7 +593,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
@@ -511,7 +601,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
@@ -534,12 +623,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E04EA822C422850076430E /* PostsView.swift in Sources */,
+				F5DFBA3722C6A90A0086DE4D /* PostTaskKit.swift in Sources */,
+				F5DFBA3422C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift in Sources */,
 				F5944FA422C29C1F00DD1174 /* AppDelegate.swift in Sources */,
 				F5944FA322C29C1F00DD1174 /* PostsViewController.swift in Sources */,
+				F5DFBA3222C6A8A40086DE4D /* PostTaskKitProtocol.swift in Sources */,
 				F5944FA522C29C1F00DD1174 /* FlowController.swift in Sources */,
+				F595E3A622C5637600684B29 /* PostsViewModel.swift in Sources */,
+				F5DFBA5322C6DC8B0086DE4D /* Logger.swift in Sources */,
+				F5DFBA4E22C6C9380086DE4D /* PostCell.swift in Sources */,
 				F5E04E7B22C414310076430E /* Worlds.swift in Sources */,
-				F5E04E7922C3FE640076430E /* APIClient.swift in Sources */,
+				F5DFBA5022C6C94E0086DE4D /* Reusable.swift in Sources */,
+				F595E3A822C563DE00684B29 /* Post.swift in Sources */,
+				F5DFBA4922C6B46E0086DE4D /* UIViewsExtensions.swift in Sources */,
+				F5E04E7922C3FE640076430E /* PostsNetworkController.swift in Sources */,
+				F5DFBA3022C6A8780086DE4D /* NetworkControllerProtocol.swift in Sources */,
 				F5944FA822C29C7F00DD1174 /* AppFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,8 +646,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F58222AD22C2A675002DC8A3 /* AppFlowControllerSnapshotTests.swift in Sources */,
-				F5009EB722C3EDE100D0ECE3 /* SnapshotHelper.swift in Sources */,
+				F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */,
+				F5DFBA5522C7726D0086DE4D /* PostCellSnapshotTests.swift in Sources */,
+				F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */,
+				F5DFBA7322C791D20086DE4D /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
