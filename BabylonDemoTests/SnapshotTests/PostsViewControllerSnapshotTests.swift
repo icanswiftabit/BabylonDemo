@@ -6,11 +6,6 @@ import RxSwift
 
 final class PostsViewControllerSnapshotTests: XCTestCase {
 
-    final class PostTaskKitMock: PostTaskKitProtocol {
-        let request = URLRequest(url: URL(string: "")!)
-        func getPostsRequest() -> Observable<URLRequest> { return .just(request) }
-    }
-
     final class PostsNetworkControllerMock: PostsNetworkCotrollerProtocol {
 
         let session: URLSession
@@ -81,10 +76,4 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
         assertSnapshot(matching: sutInNavigationController, as: .image(on: .iPhoneX))
     }
 
-}
-
-extension Post {
-    static func mock(id: Int) -> Post {
-        return Post(userId: 1, id: id, title: "title \(id)", body: "body \(id)")
-    }
 }

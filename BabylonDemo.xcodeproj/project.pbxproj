@@ -31,6 +31,10 @@
 		F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */; };
 		F5DFBA7922C7988C0086DE4D /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6422C3FAB40076430E /* RxBlocking.framework */; };
 		F5DFBA7A22C7988C0086DE4D /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6322C3FAB40076430E /* RxTest.framework */; };
+		F5DFBA7C22C79B840086DE4D /* PersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA7B22C79B840086DE4D /* PersistanceController.swift */; };
+		F5DFBA8022C79CC70086DE4D /* PostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA7F22C79CC70086DE4D /* PostsViewModelTests.swift */; };
+		F5DFBA8422C79E260086DE4D /* PostExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA8322C79E260086DE4D /* PostExtensions.swift */; };
+		F5DFBA8722C79EBC0086DE4D /* PostTaskKitMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA8622C79EBC0086DE4D /* PostTaskKitMock.swift */; };
 		F5E04E7422C3FCA90076430E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6722C3FAB40076430E /* RxCocoa.framework */; };
 		F5E04E7522C3FCA90076430E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6522C3FAB40076430E /* RxRelay.framework */; };
 		F5E04E7622C3FCA90076430E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5E04E6822C3FAB40076430E /* RxSwift.framework */; };
@@ -122,6 +126,10 @@
 		F5DFBA5422C7726D0086DE4D /* PostCellSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellSnapshotTests.swift; sourceTree = "<group>"; };
 		F5DFBA7222C791D20086DE4D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerTests.swift; sourceTree = "<group>"; };
+		F5DFBA7B22C79B840086DE4D /* PersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceController.swift; sourceTree = "<group>"; };
+		F5DFBA7F22C79CC70086DE4D /* PostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelTests.swift; sourceTree = "<group>"; };
+		F5DFBA8322C79E260086DE4D /* PostExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostExtensions.swift; sourceTree = "<group>"; };
+		F5DFBA8622C79EBC0086DE4D /* PostTaskKitMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTaskKitMock.swift; sourceTree = "<group>"; };
 		F5E04E6322C3FAB40076430E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		F5E04E6422C3FAB40076430E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		F5E04E6522C3FAB40076430E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
@@ -259,10 +267,13 @@
 		F5944F8422C29BA800DD1174 /* BabylonDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				F5DFBA8522C79EA90086DE4D /* Mocks */,
+				F5DFBA8222C79E130086DE4D /* Extensions */,
 				F5009EB522C3EDA500D0ECE3 /* Helpers */,
 				F58222AB22C2A675002DC8A3 /* SnapshotTests */,
 				F5944F8722C29BA800DD1174 /* Info.plist */,
 				F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */,
+				F5DFBA7F22C79CC70086DE4D /* PostsViewModelTests.swift */,
 			);
 			path = BabylonDemoTests;
 			sourceTree = "<group>";
@@ -336,6 +347,7 @@
 				F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */,
 				F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */,
 				F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */,
+				F5DFBA7B22C79B840086DE4D /* PersistanceController.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -379,6 +391,22 @@
 				F5DFBA5222C6DC8B0086DE4D /* Logger.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F5DFBA8222C79E130086DE4D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFBA8322C79E260086DE4D /* PostExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5DFBA8522C79EA90086DE4D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F5DFBA8622C79EBC0086DE4D /* PostTaskKitMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		F5E04E9922C41D430076430E /* World */ = {
@@ -623,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5DFBA7C22C79B840086DE4D /* PersistanceController.swift in Sources */,
 				F5DFBA3722C6A90A0086DE4D /* PostTaskKit.swift in Sources */,
 				F5DFBA3422C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift in Sources */,
 				F5944FA422C29C1F00DD1174 /* AppDelegate.swift in Sources */,
@@ -647,9 +676,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */,
+				F5DFBA8722C79EBC0086DE4D /* PostTaskKitMock.swift in Sources */,
+				F5DFBA8022C79CC70086DE4D /* PostsViewModelTests.swift in Sources */,
 				F5DFBA5522C7726D0086DE4D /* PostCellSnapshotTests.swift in Sources */,
 				F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */,
 				F5DFBA7322C791D20086DE4D /* UIViewController.swift in Sources */,
+				F5DFBA8422C79E260086DE4D /* PostExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
