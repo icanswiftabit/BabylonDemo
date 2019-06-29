@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F5309D4522C80C6700B963E5 /* FlowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5309D4422C80C6700B963E5 /* FlowAction.swift */; };
+		F5309D4722C813EA00B963E5 /* PostsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5309D4622C813EA00B963E5 /* PostsFlowController.swift */; };
 		F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */; };
 		F58222AE22C2A7DD002DC8A3 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; };
 		F58222B022C2A7E6002DC8A3 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		F5309D4422C80C6700B963E5 /* FlowAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAction.swift; sourceTree = "<group>"; };
+		F5309D4622C813EA00B963E5 /* PostsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFlowController.swift; sourceTree = "<group>"; };
 		F582228C22C29DCF002DC8A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F582229322C2A424002DC8A3 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 		F582229C22C2A4D8002DC8A3 /* BabylonDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				F5944FA722C29C7F00DD1174 /* AppFlowController.swift */,
+				F5309D4622C813EA00B963E5 /* PostsFlowController.swift */,
 				F5309D4422C80C6700B963E5 /* FlowAction.swift */,
 			);
 			path = FlowControllers;
@@ -652,6 +655,7 @@
 				F5944FA422C29C1F00DD1174 /* AppDelegate.swift in Sources */,
 				F5944FA322C29C1F00DD1174 /* PostsViewController.swift in Sources */,
 				F5DFBA3222C6A8A40086DE4D /* PostTaskKitProtocol.swift in Sources */,
+				F5309D4722C813EA00B963E5 /* PostsFlowController.swift in Sources */,
 				F5944FA522C29C1F00DD1174 /* FlowController.swift in Sources */,
 				F5309D4522C80C6700B963E5 /* FlowAction.swift in Sources */,
 				F595E3A622C5637600684B29 /* PostsViewModel.swift in Sources */,
