@@ -80,6 +80,17 @@ private extension PostsViewController {
             .asDriver()
             .drive(onPostTap)
             .disposed(by: bag)
+
+        postsViewModel.rx
+            .errorOcure
+            .asDriver()
+            .drive(onNext: { message in
+                let alert = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(alert, animated: true)
+            })
+            .disposed(by: bag)
+
     }
 
     func setUpPostsView() {

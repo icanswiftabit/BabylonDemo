@@ -6,6 +6,7 @@ final class PostsViewModel: NSObject {
 
     let posts: BehaviorSubject<[Post]>
     fileprivate let shouldReloadPosts = BehaviorRelay<Bool>(value: true)
+    fileprivate let errorMessage = BehaviorRelay<String>(value: "")
 
     private let networkController: PostsNetworkCotrollerProtocol
     private let persistanceController: PostsPersistanceControllerProtocol
@@ -24,6 +25,10 @@ final class PostsViewModel: NSObject {
     func fetchPosts() {
         networkController
             .fetchPosts()
+            .catchError { error -> Observable<[Post]> in
+                self.errorMessage.accept(error.localizedDescription)
+                return self.posts.asObservable()
+            }
             .subscribe { eventPosts in
                 guard let fetchedPosts = eventPosts.element,
                       let currentPostsHash = try? self.posts.value().hashValue,
@@ -45,5 +50,9 @@ final class PostsViewModel: NSObject {
 extension Reactive where Base: PostsViewModel {
     var reloadPosts: ControlEvent<Bool> {
         return ControlEvent(events: base.shouldReloadPosts)
+    }
+
+    var errorOcure: ControlEvent<String> {
+        return ControlEvent(events: base.errorMessage)
     }
 }
