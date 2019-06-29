@@ -25,13 +25,28 @@ final class PostsViewModelTests: XCTestCase {
         }
     }
 
+    final class PostsPersistanceControllerMock: PostsPersistanceControllerProtocol {
+        let userDefaults = UserDefaults.standard
+        var storedPosts = [Post]()
+
+        func save(_ posts: [Post]) {
+            storedPosts = posts
+        }
+
+        func load() -> [Post] {
+            return storedPosts
+        }
+
+    }
 
     var sut: PostsViewModel!
     var networkController: PostsNetworkControllerMock!
+    var persistanceController: PostsPersistanceControllerProtocol!
     let bag = DisposeBag()
 
     override func tearDown() {
         networkController = nil
+        persistanceController = nil
         sut = nil
         super.tearDown()
     }
@@ -111,7 +126,8 @@ final class PostsViewModelTests: XCTestCase {
 
 private extension PostsViewModelTests {
     func setUpSut(with expectedPosts: [Post]) {
+        persistanceController = PostsPersistanceControllerMock()
         networkController = PostsNetworkControllerMock(expectedPosts: expectedPosts)
-        sut = PostsViewModel(networkController: networkController)
+        sut = PostsViewModel(networkController: networkController, persistanceController: persistanceController)
     }
 }

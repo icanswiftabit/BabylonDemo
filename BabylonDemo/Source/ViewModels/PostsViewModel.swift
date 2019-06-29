@@ -4,14 +4,21 @@ import RxCocoa
 
 final class PostsViewModel: NSObject {
 
-    let posts = BehaviorSubject<[Post]>(value: [])
+    let posts: BehaviorSubject<[Post]>
     fileprivate let shouldReloadPosts = BehaviorRelay<Bool>(value: true)
 
     private let networkController: PostsNetworkCotrollerProtocol
+    private let persistanceController: PostsPersistanceControllerProtocol
     private let bag = DisposeBag()
 
-    init(networkController: PostsNetworkCotrollerProtocol) {
+    init(networkController: PostsNetworkCotrollerProtocol,
+         persistanceController: PostsPersistanceControllerProtocol = PostsPersistanceController()) {
+
         self.networkController = networkController
+        self.persistanceController = persistanceController
+
+        let storedPosts = persistanceController.load()
+        posts = BehaviorSubject<[Post]>(value: storedPosts)
     }
 
     func fetchPosts() {
@@ -28,6 +35,7 @@ final class PostsViewModel: NSObject {
                 }
                 Logger.debug("Oh shiny")
                 self.shouldReloadPosts.accept(true)
+                self.persistanceController.save(fetchedPosts)
                 self.posts.onNext(fetchedPosts)
             }
             .disposed(by: bag)

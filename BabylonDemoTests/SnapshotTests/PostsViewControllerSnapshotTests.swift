@@ -49,7 +49,7 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
     func testWithEmptyListOfPost() {
         // Arrange
         model = PostsViewModel(networkController: PostsNetworkControllerMock())
-        sut = PostsViewController(viewModel: model)
+        sut = setUpSut(with: model)
         let sutInNavigationController = sut.embededInNavigationController
 
         // Act & Arrange
@@ -67,7 +67,7 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
             Post.mock(id: 4)
         ]
         model = PostsViewModel(networkController: PostsNetworkControllerMock(expectedPosts: expectedPosts))
-        sut = PostsViewController(viewModel: model)
+        sut = setUpSut(with: model)
         let sutInNavigationController = sut.embededInNavigationController
 
         // Act & Arrange
@@ -76,4 +76,10 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
         assertSnapshot(matching: sutInNavigationController, as: .image(on: .iPhoneX))
     }
 
+}
+
+private extension PostsViewControllerSnapshotTests {
+    func setUpSut(with model: PostsViewModel) -> PostsViewController {
+        return PostsViewController(viewModel: model, onPostTapAction: FlowAction<IndexPath>{_ in })
+    }
 }

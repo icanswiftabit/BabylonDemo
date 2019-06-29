@@ -6,14 +6,17 @@ final class PostsViewController: UIViewController {
 
     private let postsView: UICollectionView
     private let postsViewModel: PostsViewModel
+    private let onPostTap: FlowAction<IndexPath>
     private let bag = DisposeBag()
 
-    init(viewModel: PostsViewModel) {
+    init(viewModel: PostsViewModel, onPostTapAction: FlowAction<IndexPath>) {
         postsViewModel = viewModel
 
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 8.0
         postsView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+
+        onPostTap = onPostTapAction
 
         super.init(nibName: nil, bundle: nil)
 
@@ -71,6 +74,12 @@ private extension PostsViewController {
             self.postsView.reloadData()
         }
         .disposed(by: bag)
+
+        postsView.rx
+            .itemSelected
+            .asDriver()
+            .drive(onPostTap)
+            .disposed(by: bag)
     }
 
     func setUpPostsView() {
