@@ -80,6 +80,6 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
 
 private extension PostsViewControllerSnapshotTests {
     func setUpSut(with model: PostsViewModel) -> PostsViewController {
-        return PostsViewController(viewModel: model, onPostTapAction: FlowAction<IndexPath>{_ in })
+        return PostsViewController(viewModel: model, onPostTapAction: FlowAction<Post>{_ in })
     }
 }

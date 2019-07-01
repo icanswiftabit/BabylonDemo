@@ -28,7 +28,7 @@ final class NetworkControllerTests: XCTestCase {
 
     func testShouldReturnError_forIncorrectURLInRequest() {
         // Arrange
-        let expectedError = TaskKitError.urlError
+        let expectedError = APIRequestError.urlError
         let request = Observable<URLRequest>.error(expectedError)
 
         // Act
@@ -36,7 +36,7 @@ final class NetworkControllerTests: XCTestCase {
             .subscribe(onNext: { _ in }, onError: { error in
 
                 // Assert
-                guard case TaskKitError.urlError = error else {
+                guard case APIRequestError.urlError = error else {
                     XCTFail()
                     return
                 }

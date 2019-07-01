@@ -4,14 +4,15 @@ import World
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let window = UIWindow()
-    let appController = AppFlowController()
+    var window: UIWindow?
+    let appController = AppController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         Current.baseURL = { DevelopWorld().baseURL }
 
-        appController.embedRootViewController(in: window)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        appController.embedRootViewController(in: window!)
         return true
     }
 

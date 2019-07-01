@@ -45,6 +45,16 @@ final class PostsViewModel: NSObject {
             }
             .disposed(by: bag)
     }
+
+    func post(at index: Int) -> Observable<Post> {
+        return Observable.deferred {
+            do {
+                return .just(try self.posts.value()[index])
+            } catch let error {
+                return .error(error)
+            }
+        }
+    }
 }
 
 extension Reactive where Base: PostsViewModel {

@@ -11,8 +11,7 @@ struct FlowAction<Element>: ObserverType {
 
     func on(_ event: Event<Element>) {
         switch event {
-        case .next(let value):
-            action(value)
+        case .next(let value): action(value)
         default: break
         }
     }

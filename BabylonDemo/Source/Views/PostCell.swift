@@ -23,7 +23,11 @@ final class PostCell: UICollectionViewCell {
 private extension PostCell {
     func layout() {
         addSubview(titleLabel)
-        disableAutoresizingMask()
+        translatesAutoresizingMaskIntoConstraints = false
+        subviews.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+
 
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -35,9 +39,7 @@ private extension PostCell {
 
     func decorate() {
         backgroundColor = .white
-        titleLabel.numberOfLines = 0
-        titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.style(as: .caption)
     }
 }
 

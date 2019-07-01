@@ -6,10 +6,10 @@ final class PostsViewController: UIViewController {
 
     private let postsView: UICollectionView
     private let postsViewModel: PostsViewModel
-    private let onPostTap: FlowAction<IndexPath>
+    private let onPostTap: FlowAction<Post>
     private let bag = DisposeBag()
 
-    init(viewModel: PostsViewModel, onPostTapAction: FlowAction<IndexPath>) {
+    init(viewModel: PostsViewModel, onPostTapAction: FlowAction<Post>) {
         postsViewModel = viewModel
 
         let flowLayout = UICollectionViewFlowLayout()
@@ -77,8 +77,11 @@ private extension PostsViewController {
 
         postsView.rx
             .itemSelected
-            .asDriver()
-            .drive(onPostTap)
+            .asObservable()
+            .flatMap { indexPath -> Observable<Post> in
+                return self.postsViewModel.post(at: indexPath.row)
+            }
+            .bind(to: onPostTap)
             .disposed(by: bag)
 
         postsViewModel.rx
