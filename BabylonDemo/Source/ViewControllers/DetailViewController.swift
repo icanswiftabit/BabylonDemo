@@ -34,14 +34,14 @@ final class DetailViewController: UIViewController {
 
 private extension DetailViewController {
     func setUpBinding() {
-        detailViewModel.post.debug()
+        detailViewModel.post
             .flatMap { post -> Observable<String> in
                 return .just(post.title)
             }
             .bind(to: detailView.rx.title)
             .disposed(by: bag)
 
-        detailViewModel.post.debug()
+        detailViewModel.post
             .flatMap { post -> Observable<String> in
                 return .just(post.body)
             }
@@ -56,23 +56,25 @@ private extension DetailViewController {
                 return (user, commentsCount)
             }
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { result in
+            .subscribe(onNext: { [weak self] result in
+                guard let self = self else { return }
                 self.detailView.rx.name.onNext(result.user?.name)
                 self.detailView.rx.username.onNext(result.user?.username)
                 self.detailView.rx.commentCount.onNext(result.commentsCount)
 
-            }, onError: { error in
-                self.handleError(with: error.localizedDescription)
+            }, onError: { [weak self] error in
+                self?.handleError(with: error.localizedDescription)
             })
             .disposed(by: bag)
 
     }
 
     func setUpDetailView() {
-//        view.addSubview(detaiView)
-//        let refreshControl = UIRefreshControl(frame: .zero)
-//        refreshControl.addTarget(self, action: #selector(reloadPosts), for: .valueChanged)
-//        detailViewModel.refreshControl = refreshControl
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .refresh, target: self, action: #selector(reloadDetails))
+    }
+
+    @objc func reloadDetails() {
+        detailViewModel.fetchDetails()
     }
 
     func handleError(with msg: String) {

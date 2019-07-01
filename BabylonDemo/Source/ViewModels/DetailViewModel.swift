@@ -27,8 +27,9 @@ final class DetailViewModel: NSObject {
         Observable.zip(usersFetchSignal, commentsFetchSignal) { (user: User, comments: [Comment]) -> (user: User, comments: [Comment]) in
                 return (user, comments)
             }
-            .bind { result in
-
+            .bind { [weak self] result in
+                guard let self = self else { return}
+                
                 self.user.onNext(result.user)
                 self.commentsCount.onNext(result.comments.count)
             }

@@ -25,11 +25,14 @@ final class PostsViewModel: NSObject {
     func fetchPosts() {
         networkController
             .fetchPosts()
-            .catchError { error -> Observable<[Post]> in
+            .catchError { [weak self] error -> Observable<[Post]> in
+                guard let self = self else { return .empty() }
                 self.errorMessage.accept(error.localizedDescription)
                 return self.posts.asObservable()
             }
-            .subscribe { eventPosts in
+            .subscribe { [weak self] eventPosts in
+                guard let self = self else { return }
+
                 guard let fetchedPosts = eventPosts.element,
                       let currentPostsHash = try? self.posts.value().hashValue,
                       currentPostsHash != fetchedPosts.hashValue

@@ -53,20 +53,6 @@ private extension DetailView {
             bodyLable.trailingAnchor.constraint(equalTo: bodyView.trailingAnchor),
             bodyLable.bottomAnchor.constraint(lessThanOrEqualTo: bodyView.bottomAnchor)
         ])
-        print("self")
-        subviews.forEach {
-            print($0.translatesAutoresizingMaskIntoConstraints)
-        }
-
-        print("scrollview")
-        scrollView.subviews.forEach {
-            print($0.translatesAutoresizingMaskIntoConstraints)
-        }
-
-        print("stackview")
-        stackView.subviews.forEach {
-            print($0.translatesAutoresizingMaskIntoConstraints)
-        }
     }
 
     func decorate() {

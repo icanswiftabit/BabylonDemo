@@ -78,7 +78,8 @@ private extension PostsViewController {
         postsView.rx
             .itemSelected
             .asObservable()
-            .flatMap { indexPath -> Observable<Post> in
+            .flatMap { [weak self] indexPath -> Observable<Post> in
+                guard let self = self else { return .empty() }
                 return self.postsViewModel.post(at: indexPath.row)
             }
             .bind(to: onPostTap)
@@ -87,10 +88,10 @@ private extension PostsViewController {
         postsViewModel.rx
             .errorOcure
             .asDriver()
-            .drive(onNext: { message in
+            .drive(onNext: { [weak self] message in
                 let alert = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default))
-                self.present(alert, animated: true)
+                self?.present(alert, animated: true)
             })
             .disposed(by: bag)
 
