@@ -17,7 +17,10 @@ final class PostsViewModel: NSObject {
         self.networkController = networkController
         self.persistanceController = persistanceController
 
-        let storedPosts = try? persistanceController.load(Post.self).sorted { $0.id < $1.id }
+        let storedPosts = try? persistanceController
+            .load(Post.self)
+            .sorted { $0.id < $1.id }
+
         posts = BehaviorSubject<[Post]>(value: storedPosts ?? [Post]() )
 
         super.init()

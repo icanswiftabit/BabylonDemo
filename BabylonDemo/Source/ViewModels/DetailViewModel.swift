@@ -19,10 +19,16 @@ final class DetailViewModel: NSObject {
 
         self.post = BehaviorSubject<Post>(value: post)
 
-        let storedUser = try? persistanceController.load(User.self, id: post.userId)
+        let storedUser = try? persistanceController
+            .load(User.self, id: post.userId)
+
         self.user = BehaviorSubject<User?>(value: storedUser)
 
-        let storedComments = try? persistanceController.load(Comment.self).filter { $0.postId == post.id }.sorted { $0.id < $1.id }
+        let storedComments = try? persistanceController
+            .load(Comment.self)
+            .filter { $0.postId == post.id }
+            .sorted { $0.id < $1.id }
+            
         self.comments = BehaviorSubject<[Comment]>(value: storedComments ?? [Comment]())
 
         self.networkController = networkController

@@ -4,6 +4,7 @@ import RxCocoa
 
 final class PostsViewController: UIViewController {
 
+    private lazy var emptyLabel = setUpEmptyLabel()
     private let postsView: UICollectionView
     private let postsViewModel: PostsViewModel
     private let onPostTap: FlowAction<Post>
@@ -95,18 +96,35 @@ private extension PostsViewController {
             })
             .disposed(by: bag)
 
+        postsViewModel.posts
+            .asObserver()
+            .observeOn(MainScheduler.instance)
+            .map { !$0.isEmpty }
+            .bind(to: emptyLabel.rx.isHidden)
+            .disposed(by: bag)
+
     }
 
     func setUpPostsView() {
         postsView.delegate = self
         postsView.dataSource = self
         postsView.alwaysBounceVertical = true
-        postsView.backgroundColor = .gray
+        postsView.backgroundColor = .groupTableViewBackground
         postsView.register(PostCell.self)
 
         let refreshControl = UIRefreshControl(frame: .zero)
         refreshControl.addTarget(self, action: #selector(reloadPosts), for: .valueChanged)
         postsView.refreshControl = refreshControl
+
+        postsView.backgroundView = emptyLabel
+    }
+
+    func setUpEmptyLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "Oh a newcomer!\nPull to refersh traveler 🧙‍♂️"
+        label.textAlignment = .center
+        label.style(as: .normal)
+        return label
     }
 
     @objc func reloadPosts() {
