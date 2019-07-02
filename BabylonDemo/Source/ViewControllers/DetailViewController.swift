@@ -49,21 +49,29 @@ private extension DetailViewController {
             .disposed(by: bag)
 
         let user = detailViewModel.user
-        let commentsCount = detailViewModel.commentsCount
+        let commentsCount = detailViewModel.comments
 
         Observable
-            .zip(user, commentsCount) { (user, commentsCount) -> (user: User?, commentsCount: Int) in
-                return (user, commentsCount)
+            .zip(user, commentsCount) { (user, comments) -> (user: User?, comments: [Comment]) in
+                return (user, comments)
             }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] result in
                 guard let self = self else { return }
                 self.detailView.rx.name.onNext(result.user?.name)
                 self.detailView.rx.username.onNext(result.user?.username)
-                self.detailView.rx.commentCount.onNext(result.commentsCount)
+                self.detailView.rx.commentCount.onNext(result.comments.count)
 
             }, onError: { [weak self] error in
                 self?.handleError(with: error.localizedDescription)
+            })
+            .disposed(by: bag)
+
+        detailViewModel.rx
+            .errorOccured
+            .asDriver()
+            .drive(onNext: { [weak self] message in
+               self?.handleError(with: message)
             })
             .disposed(by: bag)
 

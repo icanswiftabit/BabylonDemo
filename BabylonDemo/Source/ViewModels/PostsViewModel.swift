@@ -9,17 +9,19 @@ final class PostsViewModel: NSObject {
     fileprivate let errorMessage = BehaviorRelay<String>(value: "")
 
     private let networkController: PostsNetworkCotrollerProtocol
-    private let persistanceController: PostsPersistanceControllerProtocol
+    private let persistanceController: PersistanceControllerProtocol!
     private let bag = DisposeBag()
 
-    init(networkController: PostsNetworkCotrollerProtocol,
-         persistanceController: PostsPersistanceControllerProtocol = PostsPersistanceController()) {
+    init(networkController: PostsNetworkCotrollerProtocol, persistanceController: PersistanceControllerProtocol = PersistanceController()) {
 
         self.networkController = networkController
         self.persistanceController = persistanceController
 
-        let storedPosts = persistanceController.load()
-        posts = BehaviorSubject<[Post]>(value: storedPosts)
+        let storedPosts = try? persistanceController.load(Post.self).sorted { $0.id < $1.id }
+        posts = BehaviorSubject<[Post]>(value: storedPosts ?? [Post]() )
+
+        super.init()
+        setUpPersistanceBinding()
     }
 
     func fetchPosts() {
@@ -30,22 +32,20 @@ final class PostsViewModel: NSObject {
                 self.errorMessage.accept(error.localizedDescription)
                 return self.posts.asObservable()
             }
-            .subscribe { [weak self] eventPosts in
+            .subscribe(onNext: { [weak self] fetchedPosts in
                 guard let self = self else { return }
 
-                guard let fetchedPosts = eventPosts.element,
-                      let currentPostsHash = try? self.posts.value().hashValue,
+                guard let currentPostsHash = try? self.posts.value().hashValue,
                       currentPostsHash != fetchedPosts.hashValue
                 else {
                     Logger.debug("Nothing new here")
-                    self.shouldReloadPosts.accept(true)
+                    self.shouldReloadPosts.accept(false)
                     return
                 }
                 Logger.debug("Oh shiny")
                 self.shouldReloadPosts.accept(true)
-                self.persistanceController.save(fetchedPosts)
                 self.posts.onNext(fetchedPosts)
-            }
+            })
             .disposed(by: bag)
     }
 
@@ -60,12 +60,30 @@ final class PostsViewModel: NSObject {
     }
 }
 
+private extension PostsViewModel {
+    func setUpPersistanceBinding() {
+
+        posts
+            .asObservable()
+            .subscribe(onNext: {
+                Logger.debug("New post for save")
+                do {
+                    try self.persistanceController.save($0)
+                } catch let error {
+                    self.errorMessage.accept(error.localizedDescription)
+                }
+            })
+            .disposed(by: bag)
+
+    }
+}
+
 extension Reactive where Base: PostsViewModel {
     var reloadPosts: ControlEvent<Bool> {
         return ControlEvent(events: base.shouldReloadPosts)
     }
 
-    var errorOcure: ControlEvent<String> {
+    var errorOccured: ControlEvent<String> {
         return ControlEvent(events: base.errorMessage)
     }
 }

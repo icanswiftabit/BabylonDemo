@@ -1,6 +1,6 @@
 import Foundation
 
-struct User: Codable, Hashable {
+struct User: Storeable {
     let id: Int
     let username: String
     let name: String

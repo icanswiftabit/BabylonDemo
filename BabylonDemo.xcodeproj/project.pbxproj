@@ -17,13 +17,16 @@
 		F54CE02422C918F40021C9D2 /* DetailNetworkControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE02322C918F40021C9D2 /* DetailNetworkControllerProtocol.swift */; };
 		F54CE02622C919AA0021C9D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE02522C919AA0021C9D2 /* User.swift */; };
 		F54CE02822C919CC0021C9D2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE02722C919CC0021C9D2 /* Comment.swift */; };
-		F54CE02D22C91A8B0021C9D2 /* PostsPersistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE02C22C91A8B0021C9D2 /* PostsPersistanceController.swift */; };
-		F54CE02F22C91AB80021C9D2 /* PostsPersistanceControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE02E22C91AB80021C9D2 /* PostsPersistanceControllerProtocol.swift */; };
 		F54CE03222C91B0D0021C9D2 /* DetailNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE03122C91B0D0021C9D2 /* DetailNetworkController.swift */; };
 		F54CE03422C91B890021C9D2 /* DetailTaskKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CE03322C91B890021C9D2 /* DetailTaskKit.swift */; };
 		F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */; };
 		F58222AE22C2A7DD002DC8A3 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; };
 		F58222B022C2A7E6002DC8A3 /* SnapshotTesting.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F582229322C2A424002DC8A3 /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F59294A922CBC571009F9707 /* PersistanceControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59294A822CBC571009F9707 /* PersistanceControllerTests.swift */; };
+		F59294AB22CBDCED009F9707 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59294AA22CBDCED009F9707 /* UserDefaultsExtensions.swift */; };
+		F59294AE22CBDF32009F9707 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59294AD22CBDF32009F9707 /* ArrayExtensions.swift */; };
+		F59294B022CBDF4F009F9707 /* Storeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59294AF22CBDF4F009F9707 /* Storeable.swift */; };
+		F59294B222CBDF6C009F9707 /* PersistanceControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59294B122CBDF6C009F9707 /* PersistanceControllerProtocol.swift */; };
 		F5944FA022C29C1F00DD1174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5944F9122C29C1F00DD1174 /* Assets.xcassets */; };
 		F5944FA122C29C1F00DD1174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5944F9222C29C1F00DD1174 /* LaunchScreen.storyboard */; };
 		F5944FA322C29C1F00DD1174 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5944F9922C29C1F00DD1174 /* PostsViewController.swift */; };
@@ -119,8 +122,6 @@
 		F54CE02322C918F40021C9D2 /* DetailNetworkControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNetworkControllerProtocol.swift; sourceTree = "<group>"; };
 		F54CE02522C919AA0021C9D2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F54CE02722C919CC0021C9D2 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		F54CE02C22C91A8B0021C9D2 /* PostsPersistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPersistanceController.swift; sourceTree = "<group>"; };
-		F54CE02E22C91AB80021C9D2 /* PostsPersistanceControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPersistanceControllerProtocol.swift; sourceTree = "<group>"; };
 		F54CE03122C91B0D0021C9D2 /* DetailNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNetworkController.swift; sourceTree = "<group>"; };
 		F54CE03322C91B890021C9D2 /* DetailTaskKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskKit.swift; sourceTree = "<group>"; };
 		F582228C22C29DCF002DC8A3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +133,11 @@
 		F58222B322C2AC65002DC8A3 /* Develop.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Develop.xcconfig; sourceTree = "<group>"; };
 		F58222B622C2ACC1002DC8A3 /* Release-Tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Release-Tests.xcconfig"; sourceTree = "<group>"; };
 		F58222B722C2ACC1002DC8A3 /* Develop-Tests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Develop-Tests.xcconfig"; sourceTree = "<group>"; };
+		F59294A822CBC571009F9707 /* PersistanceControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceControllerTests.swift; sourceTree = "<group>"; };
+		F59294AA22CBDCED009F9707 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		F59294AD22CBDF32009F9707 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		F59294AF22CBDF4F009F9707 /* Storeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storeable.swift; sourceTree = "<group>"; };
+		F59294B122CBDF6C009F9707 /* PersistanceControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceControllerProtocol.swift; sourceTree = "<group>"; };
 		F5944F6D22C29BA700DD1174 /* BabylonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5944F8122C29BA800DD1174 /* BabylonDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5944F8722C29BA800DD1174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,26 +246,9 @@
 		F54CE02A22C91A6D0021C9D2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F54CE02B22C91A790021C9D2 /* PersistanceControllers */,
+				F5DFBA7B22C79B840086DE4D /* PersistanceController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		F54CE02B22C91A790021C9D2 /* PersistanceControllers */ = {
-			isa = PBXGroup;
-			children = (
-				F54CE02C22C91A8B0021C9D2 /* PostsPersistanceController.swift */,
-			);
-			path = PersistanceControllers;
-			sourceTree = "<group>";
-		};
-		F54CE03022C91ACC0021C9D2 /* PersistanceController */ = {
-			isa = PBXGroup;
-			children = (
-				F5DFBA7B22C79B840086DE4D /* PersistanceController.swift */,
-				F54CE02E22C91AB80021C9D2 /* PostsPersistanceControllerProtocol.swift */,
-			);
-			path = PersistanceController;
 			sourceTree = "<group>";
 		};
 		F54CE03522C91CB80021C9D2 /* TaskKit */ = {
@@ -321,6 +310,14 @@
 			path = Configurations;
 			sourceTree = "<group>";
 		};
+		F59294AC22CBDF27009F9707 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F59294AD22CBDF32009F9707 /* ArrayExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F5944F6422C29BA700DD1174 = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +361,7 @@
 				F5944F8722C29BA800DD1174 /* Info.plist */,
 				F5DFBA7622C793670086DE4D /* NetworkControllerTests.swift */,
 				F5DFBA7F22C79CC70086DE4D /* PostsViewModelTests.swift */,
+				F59294A822CBC571009F9707 /* PersistanceControllerTests.swift */,
 			);
 			path = BabylonDemoTests;
 			sourceTree = "<group>";
@@ -381,12 +379,13 @@
 		F5944F9622C29C1F00DD1174 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F59294AC22CBDF27009F9707 /* Extensions */,
 				F54CE02A22C91A6D0021C9D2 /* Controllers */,
 				F5944F9A22C29C1F00DD1174 /* AppDelegate.swift */,
 				F5E04E7A22C414310076430E /* Worlds.swift */,
-				F5DFBA5122C6DC840086DE4D /* Helpers */,
 				F5944F9C22C29C1F00DD1174 /* FlowControllers */,
 				F5D0B8FC22CA9A2F006886CC /* Formatters */,
+				F5DFBA5122C6DC840086DE4D /* Helpers */,
 				F5944F9722C29C1F00DD1174 /* Models */,
 				F5DFBA3522C6A8FD0086DE4D /* Networking */,
 				F5944F9D22C29C1F00DD1174 /* Protocols */,
@@ -440,10 +439,11 @@
 			children = (
 				F54CE02222C918820021C9D2 /* TaskKit */,
 				F54CE02922C91A410021C9D2 /* NetworkController */,
-				F54CE03022C91ACC0021C9D2 /* PersistanceController */,
 				F5944F9E22C29C1F00DD1174 /* FlowController.swift */,
 				F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */,
 				F51C677522C94E1F00E53FBA /* APIRequest.swift */,
+				F59294AF22CBDF4F009F9707 /* Storeable.swift */,
+				F59294B122CBDF6C009F9707 /* PersistanceControllerProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -487,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				F5DFBA8322C79E260086DE4D /* PostExtensions.swift */,
+				F59294AA22CBDCED009F9707 /* UserDefaultsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -752,9 +753,9 @@
 				F5309D4722C813EA00B963E5 /* PostsFlowController.swift in Sources */,
 				F54CE02422C918F40021C9D2 /* DetailNetworkControllerProtocol.swift in Sources */,
 				F51C677622C94E1F00E53FBA /* APIRequest.swift in Sources */,
+				F59294B222CBDF6C009F9707 /* PersistanceControllerProtocol.swift in Sources */,
 				F54CE03222C91B0D0021C9D2 /* DetailNetworkController.swift in Sources */,
 				F5944FA522C29C1F00DD1174 /* FlowController.swift in Sources */,
-				F54CE02D22C91A8B0021C9D2 /* PostsPersistanceController.swift in Sources */,
 				F5309D4522C80C6700B963E5 /* FlowAction.swift in Sources */,
 				F54CDFFF22C8CC6E0021C9D2 /* DetailViewModel.swift in Sources */,
 				F595E3A622C5637600684B29 /* PostsViewModel.swift in Sources */,
@@ -767,11 +768,12 @@
 				F5DFBA5022C6C94E0086DE4D /* Reusable.swift in Sources */,
 				F54CE03422C91B890021C9D2 /* DetailTaskKit.swift in Sources */,
 				F595E3A822C563DE00684B29 /* Post.swift in Sources */,
-				F54CE02F22C91AB80021C9D2 /* PostsPersistanceControllerProtocol.swift in Sources */,
 				F5E04E7922C3FE640076430E /* PostsNetworkController.swift in Sources */,
 				F5DFBA3022C6A8780086DE4D /* NetworkControllerProtocol.swift in Sources */,
+				F59294B022CBDF4F009F9707 /* Storeable.swift in Sources */,
 				F54CE02822C919CC0021C9D2 /* Comment.swift in Sources */,
 				F5944FA822C29C7F00DD1174 /* AppFlowController.swift in Sources */,
+				F59294AE22CBDF32009F9707 /* ArrayExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,10 +783,12 @@
 			files = (
 				F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */,
 				F5DFBA8722C79EBC0086DE4D /* PostTaskKitMock.swift in Sources */,
+				F59294AB22CBDCED009F9707 /* UserDefaultsExtensions.swift in Sources */,
 				F5DFBA8022C79CC70086DE4D /* PostsViewModelTests.swift in Sources */,
 				F5DFBA5522C7726D0086DE4D /* PostCellSnapshotTests.swift in Sources */,
 				F58222AD22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift in Sources */,
 				F5DFBA7322C791D20086DE4D /* UIViewController.swift in Sources */,
+				F59294A922CBC571009F9707 /* PersistanceControllerTests.swift in Sources */,
 				F5DFBA8422C79E260086DE4D /* PostExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

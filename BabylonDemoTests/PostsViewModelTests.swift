@@ -25,24 +25,18 @@ final class PostsViewModelTests: XCTestCase {
         }
     }
 
-    final class PostsPersistanceControllerMock: PostsPersistanceControllerProtocol {
-        let userDefaults = UserDefaults.standard
-        var storedPosts = [Post]()
-
-        func save(_ posts: [Post]) {
-            storedPosts = posts
-        }
-
-        func load() -> [Post] {
-            return storedPosts
-        }
-
-    }
-
     var sut: PostsViewModel!
     var networkController: PostsNetworkControllerMock!
-    var persistanceController: PostsPersistanceControllerProtocol!
+    var persistanceController: PersistanceControllerProtocol!
+    var userDefaults: UserDefaults!
     let bag = DisposeBag()
+
+    func setUpSut(with expectedPosts: [Post]) {
+        userDefaults = .test
+        persistanceController = PersistanceController(userDefaults: userDefaults)
+        networkController = PostsNetworkControllerMock(expectedPosts: expectedPosts)
+        sut = PostsViewModel(networkController: networkController, persistanceController: persistanceController)
+    }
 
     override func tearDown() {
         networkController = nil
@@ -121,13 +115,5 @@ final class PostsViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(postsNotificationCount, 2)
     }
-    
-}
 
-private extension PostsViewModelTests {
-    func setUpSut(with expectedPosts: [Post]) {
-        persistanceController = PostsPersistanceControllerMock()
-        networkController = PostsNetworkControllerMock(expectedPosts: expectedPosts)
-        sut = PostsViewModel(networkController: networkController, persistanceController: persistanceController)
-    }
 }

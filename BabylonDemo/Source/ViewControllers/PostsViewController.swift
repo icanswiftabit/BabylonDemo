@@ -86,7 +86,7 @@ private extension PostsViewController {
             .disposed(by: bag)
 
         postsViewModel.rx
-            .errorOcure
+            .errorOccured
             .asDriver()
             .drive(onNext: { [weak self] message in
                 let alert = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)

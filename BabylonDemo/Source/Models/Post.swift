@@ -1,6 +1,6 @@
 import Foundation
 
-struct Post: Codable, Hashable {
+struct Post: Storeable {
     let userId: Int
     let id: Int
     let title: String
