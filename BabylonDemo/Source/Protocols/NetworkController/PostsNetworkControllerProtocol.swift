@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-protocol PostsNetworkCotrollerProtocol: NetworkControllerProtocol {
+protocol PostsNetworkControllerProtocol: NetworkControllerProtocol {
     var taskKit: PostTaskKitProtocol { get }
     func fetchPosts() -> Observable<[Post]>
 }

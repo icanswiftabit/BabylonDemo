@@ -39,13 +39,6 @@ final class PostsViewController: UIViewController {
         super.viewDidLoad()
         postsViewModel.fetchPosts()
     }
-
-
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        guard case UIEvent.EventSubtype.motionShake = motion else { return }
-        Logger.debug("shake")
-        postsViewModel.fetchPosts()
-    }
 }
 
 extension PostsViewController: UICollectionViewDataSource & UICollectionViewDelegate {

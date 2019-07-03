@@ -8,11 +8,11 @@ final class PostsViewModel: NSObject {
     fileprivate let shouldReloadPosts = BehaviorRelay<Bool>(value: true)
     fileprivate let errorMessage = BehaviorRelay<String>(value: "")
 
-    private let networkController: PostsNetworkCotrollerProtocol
+    private let networkController: PostsNetworkControllerProtocol
     private let persistanceController: PersistanceControllerProtocol!
     private let bag = DisposeBag()
 
-    init(networkController: PostsNetworkCotrollerProtocol, persistanceController: PersistanceControllerProtocol = PersistanceController()) {
+    init(networkController: PostsNetworkControllerProtocol, persistanceController: PersistanceControllerProtocol = PersistanceController()) {
 
         self.networkController = networkController
         self.persistanceController = persistanceController

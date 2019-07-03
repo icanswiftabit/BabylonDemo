@@ -10,6 +10,7 @@
 		F51C677622C94E1F00E53FBA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C677522C94E1F00E53FBA /* APIRequest.swift */; };
 		F5309D4522C80C6700B963E5 /* FlowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5309D4422C80C6700B963E5 /* FlowAction.swift */; };
 		F5309D4722C813EA00B963E5 /* PostsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5309D4622C813EA00B963E5 /* PostsFlowController.swift */; };
+		F533E45322CC12B6006E8952 /* DetailViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F533E45222CC12B6006E8952 /* DetailViewControllerSnapshotTests.swift */; };
 		F54CDFFB22C8CB630021C9D2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CDFFA22C8CB630021C9D2 /* DetailViewController.swift */; };
 		F54CDFFD22C8CB990021C9D2 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CDFFC22C8CB990021C9D2 /* DetailView.swift */; };
 		F54CDFFF22C8CC6E0021C9D2 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54CDFFE22C8CC6E0021C9D2 /* DetailViewModel.swift */; };
@@ -38,7 +39,7 @@
 		F5D0B8FE22CA9A41006886CC /* UILableFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0B8FD22CA9A41006886CC /* UILableFormatter.swift */; };
 		F5DFBA3022C6A8780086DE4D /* NetworkControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */; };
 		F5DFBA3222C6A8A40086DE4D /* PostTaskKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3122C6A8A40086DE4D /* PostTaskKitProtocol.swift */; };
-		F5DFBA3422C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */; };
+		F5DFBA3422C6A8B90086DE4D /* PostsNetworkControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3322C6A8B90086DE4D /* PostsNetworkControllerProtocol.swift */; };
 		F5DFBA3722C6A90A0086DE4D /* PostTaskKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA3622C6A90A0086DE4D /* PostTaskKit.swift */; };
 		F5DFBA4E22C6C9380086DE4D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA4D22C6C9380086DE4D /* PostCell.swift */; };
 		F5DFBA5022C6C94E0086DE4D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */; };
@@ -115,6 +116,7 @@
 		F51C677522C94E1F00E53FBA /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		F5309D4422C80C6700B963E5 /* FlowAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowAction.swift; sourceTree = "<group>"; };
 		F5309D4622C813EA00B963E5 /* PostsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsFlowController.swift; sourceTree = "<group>"; };
+		F533E45222CC12B6006E8952 /* DetailViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
 		F54CDFFA22C8CB630021C9D2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F54CDFFC22C8CB990021C9D2 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F54CDFFE22C8CC6E0021C9D2 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 		F5D0B8FD22CA9A41006886CC /* UILableFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILableFormatter.swift; sourceTree = "<group>"; };
 		F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerProtocol.swift; sourceTree = "<group>"; };
 		F5DFBA3122C6A8A40086DE4D /* PostTaskKitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTaskKitProtocol.swift; sourceTree = "<group>"; };
-		F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkCotrollerProtocol.swift; sourceTree = "<group>"; };
+		F5DFBA3322C6A8B90086DE4D /* PostsNetworkControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsNetworkControllerProtocol.swift; sourceTree = "<group>"; };
 		F5DFBA3622C6A90A0086DE4D /* PostTaskKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTaskKit.swift; sourceTree = "<group>"; };
 		F5DFBA4D22C6C9380086DE4D /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F5DFBA4F22C6C94E0086DE4D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -237,7 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				F5DFBA2F22C6A8780086DE4D /* NetworkControllerProtocol.swift */,
-				F5DFBA3322C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift */,
+				F5DFBA3322C6A8B90086DE4D /* PostsNetworkControllerProtocol.swift */,
 				F54CE02322C918F40021C9D2 /* DetailNetworkControllerProtocol.swift */,
 			);
 			path = NetworkController;
@@ -295,6 +297,7 @@
 			children = (
 				F58222AC22C2A675002DC8A3 /* PostsViewControllerSnapshotTests.swift */,
 				F5DFBA5422C7726D0086DE4D /* PostCellSnapshotTests.swift */,
+				F533E45222CC12B6006E8952 /* DetailViewControllerSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -746,7 +749,7 @@
 				F5DFBA7C22C79B840086DE4D /* PersistanceController.swift in Sources */,
 				F5DFBA3722C6A90A0086DE4D /* PostTaskKit.swift in Sources */,
 				F5D0B8FE22CA9A41006886CC /* UILableFormatter.swift in Sources */,
-				F5DFBA3422C6A8B90086DE4D /* PostsNetworkCotrollerProtocol.swift in Sources */,
+				F5DFBA3422C6A8B90086DE4D /* PostsNetworkControllerProtocol.swift in Sources */,
 				F5944FA422C29C1F00DD1174 /* AppDelegate.swift in Sources */,
 				F5944FA322C29C1F00DD1174 /* PostsViewController.swift in Sources */,
 				F5DFBA3222C6A8A40086DE4D /* PostTaskKitProtocol.swift in Sources */,
@@ -782,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DFBA7722C793670086DE4D /* NetworkControllerTests.swift in Sources */,
+				F533E45322CC12B6006E8952 /* DetailViewControllerSnapshotTests.swift in Sources */,
 				F5DFBA8722C79EBC0086DE4D /* PostTaskKitMock.swift in Sources */,
 				F59294AB22CBDCED009F9707 /* UserDefaultsExtensions.swift in Sources */,
 				F5DFBA8022C79CC70086DE4D /* PostsViewModelTests.swift in Sources */,

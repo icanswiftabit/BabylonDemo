@@ -37,6 +37,14 @@
                BlueprintName = "BabylonDemoTests"
                ReferencedContainer = "container:BabylonDemo.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "DetailViewControllerSnapshotTests">
+               </Test>
+               <Test
+                  Identifier = "PostsViewControllerSnapshotTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

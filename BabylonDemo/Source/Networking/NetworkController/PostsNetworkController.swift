@@ -2,7 +2,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class PostsNetworkController: PostsNetworkCotrollerProtocol {
+final class PostsNetworkController: PostsNetworkControllerProtocol {
 
     let session: URLSession
     let taskKit: PostTaskKitProtocol

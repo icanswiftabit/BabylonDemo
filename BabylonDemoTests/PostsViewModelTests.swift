@@ -4,7 +4,7 @@ import RxSwift
 
 final class PostsViewModelTests: XCTestCase {
 
-    final class PostsNetworkControllerMock: PostsNetworkCotrollerProtocol {
+    final class PostsNetworkControllerMock: PostsNetworkControllerProtocol {
         var taskKit: PostTaskKitProtocol
         var session: URLSession
         var expectedPosts: [Post]

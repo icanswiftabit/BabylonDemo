@@ -6,7 +6,7 @@ import RxSwift
 
 final class PostsViewControllerSnapshotTests: XCTestCase {
 
-    final class PostsNetworkControllerMock: PostsNetworkCotrollerProtocol {
+    final class PostsNetworkControllerMock: PostsNetworkControllerProtocol {
 
         let session: URLSession
         let taskKit: PostTaskKitProtocol
@@ -34,6 +34,7 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
 
     var sut: PostsViewController!
     var model: PostsViewModel!
+    var persistanceController: PersistanceController!
 
     override func setUp() {
         super.setUp()
@@ -41,15 +42,16 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
     }
 
     override func tearDown() {
+        persistanceController.remove(Post.self)
         model = nil
         sut = nil
         super.tearDown()
     }
 
     func testWithEmptyListOfPost() {
+
         // Arrange
-        model = PostsViewModel(networkController: PostsNetworkControllerMock())
-        sut = setUpSut(with: model)
+        sut = setUpSut(with: [Post]())
         let sutInNavigationController = sut.embededInNavigationController
 
         // Act & Arrange
@@ -59,6 +61,7 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
     }
 
     func testWithListOfPosts() {
+
         // Arrange
         let expectedPosts = [
             Post.mock(id: 1),
@@ -66,8 +69,8 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
             Post.mock(id: 3),
             Post.mock(id: 4)
         ]
-        model = PostsViewModel(networkController: PostsNetworkControllerMock(expectedPosts: expectedPosts))
-        sut = setUpSut(with: model)
+
+        sut = setUpSut(with: expectedPosts)
         let sutInNavigationController = sut.embededInNavigationController
 
         // Act & Arrange
@@ -79,7 +82,10 @@ final class PostsViewControllerSnapshotTests: XCTestCase {
 }
 
 private extension PostsViewControllerSnapshotTests {
-    func setUpSut(with model: PostsViewModel) -> PostsViewController {
+    func setUpSut(with posts: [Post]) -> PostsViewController {
+        let networkController = PostsNetworkControllerMock(expectedPosts: posts)
+        persistanceController = PersistanceController(userDefaults: .test)
+        model = PostsViewModel(networkController: networkController, persistanceController: persistanceController)
         return PostsViewController(viewModel: model, onPostTapAction: FlowAction<Post>{_ in })
     }
 }
